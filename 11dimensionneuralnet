@@ -1,0 +1,16 @@
+import tensorflow as tf
+from tensorflow import keras
+
+# Define the model
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(11,)),  # Input layer for 11 dimensions
+    keras.layers.Dense(64, activation='relu'),    # Hidden layer
+    keras.layers.Dense(32, activation='relu'),    # Another hidden layer
+    keras.layers.Dense(1, activation='sigmoid')    # Output layer (for binary classification)
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Summary of the model
+model.summary()
